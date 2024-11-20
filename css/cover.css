@@ -1,0 +1,135 @@
+
+@font-face {
+  font-family: 'CedarvilleCursive-Regular';
+  src: url("../fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+    background-color: #d7ab3e; 
+  }
+  .centered-box {
+    width: 100%;
+    max-width: 500px;
+    min-width: 500px;
+    border: 10px solid white;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #e86d41;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .eye {
+    position: relative;
+    top: 0px;
+    left: 20%;
+    width: 110px;
+    height: 110px;
+    background: white;
+    transform: rotate(45deg);
+    border-radius: 75% 0;
+  }
+
+  .iris {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background: #00aaff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: color-alternate 4.5s infinite;
+  }
+
+  .yellow-iris { background: #E9B351; }
+
+  .pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    background: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Center the pupil */
+    
+  }
+
+  .eyelid {
+    width: 210px;
+    height: 110px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 1;
+  }
+
+  .eyelid span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0%;
+    background: #ef888c;
+    border-radius: 0 0 60% 60%;
+    animation: blink 2.5s infinite;  
+    z-index: -10;
+  }
+
+  .eye {
+    overflow: hidden;
+  }
+   
+  .eye:active .lid span{
+    height: 100%;
+  }
+
+  @keyframes blink {
+    0%,
+    80% {
+      height: 0%;
+    }
+    95% {
+      height: 100%;
+    }
+
+    100% {
+      height: 0%;
+    }
+  }
+
+  @keyframes color-alternate {
+    0%, 49.99% {
+      background-color: #00aaff; /* Blue */
+    }
+    50%, 100% {
+      background-color: #E9B351; /* Yellow */
+    }
+  }
+  
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 50px;
+    font-family: CedarvilleCursive-Regular;
+  }
+
+  .author {
+    color: white;
+    font-size: 20px;
+     }
